@@ -8,26 +8,31 @@ Original file is located at
 
 In this study, handwriting is recognized with NN. For this, the mnist dataset and more than one layer was used.
 """
-
+# İmporting the libraries
 import numpy as np
 import tensorflow as tf
 from tensorflow import keras
 
+# Loading datasets as mnist
 mnist=keras.datasets.mnist
-
 (X_train, Y_train), (X_test, Y_test)=mnist.load_data()
+
+# Printing the shape of the X and Y values
 print(X_train.shape)
 print(X_test.shape)
 print(Y_train.shape)
 print(Y_test.shape)
 
+# Reshape the X_train and X_test
 X_train=X_train.reshape(X_train.shape[0],28*28)
 X_test=X_test.reshape(X_test.shape[0],28*28)
 print(X_train.shape)
 print(X_test.shape)
 
+#Normalizing X_train and X_test
 X_train=X_train/255
 X_test=X_test/255
+
 X_train=X_train.astype("float32")
 X_test=X_test.astype("float32")
 
